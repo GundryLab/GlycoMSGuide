@@ -1,0 +1,77 @@
+import {
+  diagnosticIons,
+  withdrawnDiagnosticIons,
+  diagnosticIonDatasetLastUpdated,
+  references,
+  getGlytoucanIdsForIon,
+  getGlytoucanContext,
+} from "../src/data/glycanData";
+
+export function buildDiagnosticIonsExport() {
+  return {
+    name: "GlycoMSGuide diagnostic ion reference",
+    description:
+      "Machine-readable reference of diagnostic and oxonium ions for glycan and glycopeptide MS/MS interpretation. Free to use; please cite the GlycoMSGuide companion publication and the original sources listed under `sources`.",
+    homepage: "https://glycomsguide.net",
+    lastUpdated: diagnosticIonDatasetLastUpdated,
+    count: diagnosticIons.length,
+    fields: {
+      mz: "Monoisotopic m/z value as a number (for computation; trailing zeros are not preserved).",
+      mzText: "Monoisotopic m/z value formatted to 4 decimal places as a string (for display).",
+      formula: "Elemental formula of the ion itself (Hill order), after protonation or deprotonation.",
+      charge: "Signed charge of the ion (+1 or -1). m/z = (sum of monoisotopic atomic masses − charge × electron mass) / |charge|.",
+      verification: "\"source\": supported by the evidence records; \"calculated\": composition and m/z calculated, no primary source located yet (see evidenceNote).",
+      evidenceNote: "For calculated ions: what has been checked and what source is still needed.",
+      evidence: "Zero (calculated ions) or more records {sourceKey, locator, reportedMz (as printed), reportedAssignment, evidenceType, primaryReferences?, context}. sourceKey refers to `sources[].id`.",
+      curationNote: "Internal curation note from the source review.",
+      description: "Human-readable name of the ion.",
+      composition: "Monosaccharide / fragment composition.",
+      category:
+        "One of: monosaccharide, glycan_type, motif, modification, glycopeptide, oxonium.",
+      subCategory: "Optional finer classification.",
+      ionType: "Optional fragment ion type (e.g. B, Y, oxonium, cross-ring).",
+      polarity: "Ion mode the fragment is observed in: positive or negative.",
+      monosaccharides: "Optional list of constituent monosaccharide residues.",
+      notes: "Optional notes or caveats.",
+      source: "Short citation key; see `sources` for full references.",
+      glytoucan:
+        "Associated GlyTouCan accession entries ({ id, name }) when available.",
+      glytoucanContext:
+        "How the GlyTouCan IDs relate to the ion: exact, precursor, or none.",
+    },
+    ions: diagnosticIons.map((ion) => ({
+      mz: ion.mz,
+      mzText: ion.mz.toFixed(4),
+      formula: ion.formula,
+      charge: ion.charge,
+      verification: ion.verification,
+      evidence: ion.evidence,
+      evidenceNote: ion.evidenceNote ?? null,
+      curationNote: ion.curationNote ?? null,
+      description: ion.description,
+      composition: ion.composition,
+      category: ion.category,
+      subCategory: ion.subCategory ?? null,
+      ionType: ion.ionType ?? null,
+      polarity: ion.polarity,
+      monosaccharides: ion.monosaccharides ?? [],
+      notes: ion.notes ?? null,
+      source: ion.source,
+      glytoucan: getGlytoucanIdsForIon(ion),
+      glytoucanContext: getGlytoucanContext(ion),
+    })),
+    withdrawn: withdrawnDiagnosticIons.map((ion) => ({ ...ion, mzText: ion.mz.toFixed(4) })),
+    sources: references.map((ref) => ({
+      id: ref.id,
+      authors: ref.authors,
+      title: ref.title,
+      journal: ref.journal,
+      year: ref.year,
+      volume: ref.volume,
+      pages: ref.pages,
+      doi: ref.doi,
+      url: ref.url,
+      ionListUrl: "ionListUrl" in ref ? ref.ionListUrl : null,
+    })),
+  };
+}

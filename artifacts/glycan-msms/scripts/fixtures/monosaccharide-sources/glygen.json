@@ -1,0 +1,17 @@
+[
+  {
+    "glytoucan": { "glytoucan_ac": "G76685HR", "glytoucan_url": "https://glytoucan.org/Structures/Glycans/G76685HR" },
+    "number_monosaccharides": 1,
+    "composition": [{ "name": "N-Acetyl-Neuraminic Acid", "residue": "neuac", "count": 1, "cid": "999999", "url": "https://pubchem.ncbi.nlm.nih.gov/compound/999999" }]
+  },
+  {
+    "glytoucan": { "glytoucan_ac": "G00000ZZ", "glytoucan_url": "https://glytoucan.org/Structures/Glycans/G00000ZZ" },
+    "number_monosaccharides": 1,
+    "composition": [{ "name": "Fixture sugar", "residue": "fixture", "count": 1, "cid": "888888" }]
+  },
+  {
+    "glytoucan": { "glytoucan_ac": "G26366JF" },
+    "number_monosaccharides": 1,
+    "composition": [{ "name": "N-Glycolyl-Neuraminic Acid", "residue": "neugc", "count": 1, "cid": "440001" }]
+  }
+]

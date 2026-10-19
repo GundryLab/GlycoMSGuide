@@ -1,0 +1,6 @@
+{
+  "glytoucan": { "glytoucan_ac": "G76685HR" },
+  "number_monosaccharides": 1,
+  "composition": [{ "name": "Neu5Ac", "residue": "neuac", "count": 1 }],
+  "invented_field": true
+}

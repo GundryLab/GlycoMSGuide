@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+type: software
+title: GlycoMSGuide
+message: "If you use GlycoMSGuide, please cite the accompanying article."
+license: MIT
+url: https://www.glycomsguide.net
+repository-code: https://github.com/GundryLab/GlycoMSGuide
+version: "2026.10"
+authors: &authors
+  - family-names: Gundry
+    given-names: Rebekah L.
+  - family-names: Aoki-Kinoshita
+    given-names: Kiyoko F.
+  - family-names: Armony
+    given-names: Gad
+  - family-names: Chalkley
+    given-names: Robert J.
+  - family-names: Kolarich
+    given-names: Daniel
+  - family-names: Lindpaintner
+    given-names: Klaus
+  - family-names: Lisacek
+    given-names: Frédérique
+  - family-names: Martinez
+    given-names: Karina
+  - family-names: Neelamegham
+    given-names: Sriram
+  - family-names: Packer
+    given-names: Nicolle H.
+  - family-names: Polasky
+    given-names: Daniel A.
+  - family-names: Ranzinger
+    given-names: Rene
+  - family-names: Rapp
+    given-names: Erdmann
+  - family-names: Peruvemba Subramanian
+    given-names: Sabarinath
+  - family-names: Thaysen-Andersen
+    given-names: Morten
+  - family-names: Turiák
+    given-names: Lilla
+  - family-names: Vakhrushev
+    given-names: Sergey Y.
+  - family-names: Wessels
+    given-names: Hans J.C.T.
+preferred-citation:
+  type: article
+  title: "Community-Developed Best Practices for Mass Spectrometry-Based Mammalian N- and O-linked Glycomics and Glycoproteomics Analysis and Reporting"
+  authors: *authors
+  # Journal, volume and DOI to be added on publication.
+# TODO: add the Zenodo DOI after the first archived release.

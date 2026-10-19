@@ -1,0 +1,7 @@
+{
+  "glytoucan": { "glytoucan_ac": "G98615GD" },
+  "number_monosaccharides": 13,
+  "composition": [
+    { "name": "D-Galactose", "residue": "gal", "count": 3, "cid": "6036" }
+  ]
+}

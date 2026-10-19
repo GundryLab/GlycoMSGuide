@@ -1,0 +1,5 @@
+Accession Number,IUPAC Condensed,WURCS,Monoisotopic mass,Motif name(s),Subsumption,ChEBI,PubChem CID,Taxonomy,GlycomeAtlas
+G76685HR,Neu5Ac,"WURCS=2.0/1,1,0/[AUd21122h_5*NCC/3=O]/1/",309.11,,Composition,17012,999999,Homo sapiens:9606,
+G00000ZZ,Fixture sugar,"WURCS=2.0/1,1,0/[a2122h-1b_1-5]/1/",100.00,,Composition,99999,888888,,
+G26366JF,Neu5Gc,"WURCS=2.0/1,1,0/[AUd21122h_5*NCCO/3=O]/1/",325.10,,Composition,146193,440001,,
+G98615GD,Complex glycan,"WURCS=2.0/6,13,12/[a2122h-1x_1-5]/1-2-3/",2313.84,,Linkage defined saccharide,155502,91859798,Bos taurus:9913,
